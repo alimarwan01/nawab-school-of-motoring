@@ -209,6 +209,9 @@ export default function PricingPage() {
                   </div>
                 ))}
               </div>
+              <p className="text-xs text-muted-foreground">
+                All prices subject to terms &amp; conditions — please ask for details when booking.
+              </p>
             </div>
           </AnimateIn>
         </div>
