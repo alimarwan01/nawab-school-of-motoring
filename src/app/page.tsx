@@ -285,61 +285,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Testimonial strip — large photos */}
-      <section className="border-y bg-white px-4 py-16 sm:py-24">
-        <div className="mx-auto max-w-6xl lg:px-8">
-          <AnimateIn>
-            <div className="flex items-baseline justify-between">
-              <h2 className="text-2xl font-bold sm:text-3xl">
-                From our students
-              </h2>
-              <Link
-                href="/testimonials"
-                className="text-sm text-primary underline underline-offset-4 hover:text-primary/80"
-              >
-                All reviews &rarr;
-              </Link>
-            </div>
-          </AnimateIn>
-          <div className="mt-10 grid gap-8 sm:grid-cols-3">
-            {featuredReviews.map((t, i) => (
-              <AnimateIn key={t.name} from="up" delay={i * 150}>
-                <a
-                  href={t.sourceUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block overflow-hidden rounded-lg border bg-white transition-shadow duration-200 hover:shadow-md"
-                >
-                  {t.photo && (
-                    <Image
-                      src={t.photo}
-                      alt={`${t.name} after passing their driving test`}
-                      width={400}
-                      height={300}
-                      className="aspect-[4/3] w-full object-cover"
-                    />
-                  )}
-                  <div className="p-5">
-                    <p className="text-sm leading-relaxed text-foreground/80">
-                      &ldquo;{t.quote}&rdquo;
-                    </p>
-                    <div className="mt-3 border-t pt-3">
-                      <p className="text-sm font-semibold">{t.name}</p>
-                      {t.result && (
-                        <p className="text-xs text-primary">{t.result}</p>
-                      )}
-                      <p className="mt-1 text-xs text-muted-foreground">
-                        {t.date && <>{t.date} &middot; </>}
-                        View on {t.source === "google" ? "Google" : t.source === "freeindex" ? "FreeIndex" : "Website"} &rarr;
-                      </p>
-                    </div>
-                  </div>
-                </a>
-              </AnimateIn>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CTA */}
       <CTABanner />
