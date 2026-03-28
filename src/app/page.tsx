@@ -1,11 +1,12 @@
 import { Phone } from "lucide-react";
+import Image from "next/image";
 import { CTABanner } from "@/components/cta-banner";
 import { AnimateIn } from "@/components/animate-in";
 import { StatsStrip } from "./stats-strip";
 import { testimonials } from "@/data/testimonials";
 import Link from "next/link";
 
-const featuredReviews = testimonials.filter((t) => t.result).slice(0, 3);
+const featuredReviews = testimonials.filter((t) => t.result && t.photo).slice(0, 3);
 
 export default function HomePage() {
   return (
@@ -209,21 +210,35 @@ export default function HomePage() {
                 href="/testimonials"
                 className="text-sm text-primary underline underline-offset-4 hover:text-primary/80"
               >
-                All 38 reviews &rarr;
+                All reviews &rarr;
               </Link>
             </div>
           </AnimateIn>
           <div className="mt-10 grid gap-8 sm:grid-cols-3">
             {featuredReviews.map((t, i) => (
               <AnimateIn key={t.name} from="up" delay={i * 150}>
-                <div>
-                  <p className="leading-relaxed text-foreground/80">
-                    &ldquo;{t.quote}&rdquo;
-                  </p>
-                  <p className="mt-3 text-sm font-semibold">{t.name}</p>
-                  {t.result && (
-                    <p className="text-sm text-primary">{t.result}</p>
+                <div className="flex gap-4">
+                  {t.photo && (
+                    <Image
+                      src={t.photo}
+                      alt={`${t.name} after passing their driving test`}
+                      width={48}
+                      height={48}
+                      className="h-12 w-12 shrink-0 rounded-full object-cover"
+                    />
                   )}
+                  <div>
+                    <p className="leading-relaxed text-foreground/80">
+                      &ldquo;{t.quote}&rdquo;
+                    </p>
+                    <p className="mt-3 text-sm font-semibold">{t.name}</p>
+                    {t.result && (
+                      <p className="text-sm text-primary">{t.result}</p>
+                    )}
+                    <p className="text-xs text-muted-foreground">
+                      via {t.source === "google" ? "Google" : t.source === "freeindex" ? "FreeIndex" : "Website"}
+                    </p>
+                  </div>
                 </div>
               </AnimateIn>
             ))}
