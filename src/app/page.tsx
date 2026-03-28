@@ -32,8 +32,27 @@ export default function HomePage() {
                 first-time pass rate with lessons from &pound;28/hr.
               </p>
             </AnimateIn>
-            <AnimateIn from="up" delay={500} duration={600}>
-              <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
+            <AnimateIn from="up" delay={450} duration={600}>
+              <div className="mt-8 inline-flex items-center gap-3 rounded-lg bg-primary-foreground/10 px-4 py-3">
+                <Image
+                  src="/dsa-badge.jpg"
+                  alt="DVSA Approved Driving Instructor"
+                  width={44}
+                  height={44}
+                  className="h-11 w-11 rounded object-contain"
+                />
+                <div>
+                  <p className="text-sm font-semibold text-primary-foreground">
+                    200+ first-time passes
+                  </p>
+                  <p className="text-xs text-primary-foreground/60">
+                    DVSA Approved &middot; 5.0 stars on Google
+                  </p>
+                </div>
+              </div>
+            </AnimateIn>
+            <AnimateIn from="up" delay={600} duration={600}>
+              <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center">
                 <a
                   href="tel:07977589345"
                   className="group inline-flex items-center gap-2 rounded-md bg-accent px-6 py-3 text-base font-medium text-accent-foreground transition-all duration-200 hover:bg-accent/90 hover:shadow-lg hover:shadow-accent/25 hover:-translate-y-0.5"
