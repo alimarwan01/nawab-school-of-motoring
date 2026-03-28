@@ -1,18 +1,13 @@
 import { NextResponse } from "next/server";
 import { z } from "zod/v4";
-
-const contactSchema = z.object({
-  name: z.string().min(2),
-  phone: z.string().min(6),
-  email: z.email(),
-  message: z.string().min(10),
-});
+import { contactSchema } from "@/lib/schemas";
 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
     contactSchema.parse(body);
 
+    // Supabase integration will go here — insert into contact_submissions table
     return NextResponse.json(
       { success: true, message: "Message received" },
       { status: 200 }

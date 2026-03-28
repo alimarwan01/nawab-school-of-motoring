@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Phone, Menu, X } from "lucide-react";
 import { useState } from "react";
+import { business } from "@/lib/constants";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -24,7 +25,7 @@ export function Header() {
         <Link href="/">
           <Image
             src="/logo.jpeg"
-            alt="Nawab School of Motoring"
+            alt={business.name}
             width={180}
             height={40}
             className="h-8 w-auto sm:h-10"
@@ -46,16 +47,16 @@ export function Header() {
 
         <div className="flex items-center gap-3">
           <a
-            href="tel:07977589345"
+            href={business.phone.href}
             className="hidden items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 sm:flex"
           >
             <Phone className="h-3.5 w-3.5" />
-            07977 589 345
+            {business.phone.display}
           </a>
           <a
-            href="tel:07977589345"
+            href={business.phone.href}
             className="flex items-center justify-center rounded-md bg-primary p-2 text-primary-foreground sm:hidden"
-            aria-label="Call us"
+            aria-label={`Call ${business.phone.display}`}
           >
             <Phone className="h-4 w-4" />
           </a>

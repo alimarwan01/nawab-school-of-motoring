@@ -8,9 +8,11 @@ export interface Testimonial {
   photo?: string;
 }
 
-const GOOGLE_URL = "https://www.google.com/maps/place/Nawab+School+Of+Motoring/@52.6569,-1.0728,17z/data=!4m8!3m7!1s0x4877613682d1a7e9:0x7a2e5be5cc0c8e0!8m2!3d52.6569!4d-1.0728!9m1!1b1!16s%2Fg%2F11c5r7_9zz";
-const FREEINDEX_URL = "https://www.freeindex.co.uk/profile(nawab-school-of-motoring)_536371.htm";
-const WEBSITE_URL = "https://nawabmotoring.co.uk/0/testimonials.htm";
+import { business } from "@/lib/constants";
+
+const GOOGLE_URL = business.social.google;
+const FREEINDEX_URL = business.social.freeindex;
+const WEBSITE_URL = `${business.website}/0/testimonials.htm`;
 
 export const testimonials: Testimonial[] = [
   // FreeIndex reviews (with dates, most recent first)

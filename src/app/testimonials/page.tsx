@@ -4,6 +4,7 @@ import { CTABanner } from "@/components/cta-banner";
 import { AnimateIn } from "@/components/animate-in";
 import { GoogleIcon, FreeIndexIcon } from "@/components/icons";
 import { testimonials } from "@/data/testimonials";
+import { business } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Reviews",
@@ -25,11 +26,11 @@ export default function TestimonialsPage() {
               our students. {passCount} confirmed passes.
             </p>
             <p className="mt-4 text-sm text-primary-foreground/50">
-              5.0/5 on Google (199 reviews) &middot; 5.0/5 on FreeIndex (457 reviews)
+              {business.reviews.google.rating}/5 on Google ({business.reviews.google.count} reviews) &middot; {business.reviews.freeindex.rating}/5 on FreeIndex ({business.reviews.freeindex.count} reviews)
             </p>
             <div className="mt-4 flex gap-2">
               <a
-                href="https://www.google.com/maps/place/Nawab+School+Of+Motoring/@52.6569,-1.0728,17z/data=!4m8!3m7!1s0x4877613682d1a7e9:0x7a2e5be5cc0c8e0!8m2!3d52.6569!4d-1.0728!9m1!1b1!16s%2Fg%2F11c5r7_9zz"
+                href={business.social.google}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-md bg-primary-foreground px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary-foreground/90"
@@ -38,7 +39,7 @@ export default function TestimonialsPage() {
                 Google Reviews
               </a>
               <a
-                href="https://www.freeindex.co.uk/profile(nawab-school-of-motoring)_536371.htm"
+                href={business.social.freeindex}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-md border border-primary-foreground/30 px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary-foreground/10"

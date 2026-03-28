@@ -2,6 +2,7 @@
 
 import { Phone } from "lucide-react";
 import { AnimateIn } from "@/components/animate-in";
+import { business } from "@/lib/constants";
 
 interface CTABannerProps {
   title?: string;
@@ -21,11 +22,11 @@ export function CTABanner({
         </AnimateIn>
         <AnimateIn from="up" delay={200}>
           <a
-            href="tel:07977589345"
+            href={business.phone.href}
             className="group mt-6 inline-flex items-center gap-2 rounded-md bg-accent px-7 py-3.5 text-lg font-medium text-accent-foreground transition-all duration-200 hover:bg-accent/90 hover:shadow-lg hover:shadow-accent/25 hover:-translate-y-0.5 animate-[subtle-pulse_3s_ease-in-out_infinite]"
           >
             <Phone className="h-5 w-5 transition-transform duration-200 group-hover:rotate-12" />
-            07977 589 345
+            {business.phone.display}
           </a>
         </AnimateIn>
       </div>

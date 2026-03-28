@@ -3,6 +3,7 @@
 import { AnimateIn } from "@/components/animate-in";
 import { CountUp } from "@/components/count-up";
 import { GoogleIcon, FreeIndexIcon } from "@/components/icons";
+import { business } from "@/lib/constants";
 
 function Star() {
   return (
@@ -18,7 +19,7 @@ export function GoogleRating() {
       <div className="flex flex-col items-center justify-between gap-4 rounded-xl border bg-white p-6 shadow-sm sm:flex-row sm:p-8">
         <div className="flex items-center gap-6">
           <span className="text-5xl font-bold tabular-nums">
-            <CountUp end={5} suffix=".0" />
+            <CountUp end={business.reviews.google.rating} suffix=".0" />
           </span>
           <div>
             <div className="flex gap-0.5">
@@ -27,14 +28,14 @@ export function GoogleRating() {
               ))}
             </div>
             <p className="mt-1 text-sm text-muted-foreground">
-              <CountUp end={199} /> reviews on Google &middot;{" "}
-              <CountUp end={457} /> on FreeIndex
+              <CountUp end={business.reviews.google.count} /> reviews on Google &middot;{" "}
+              <CountUp end={business.reviews.freeindex.count} /> on FreeIndex
             </p>
           </div>
         </div>
         <div className="flex gap-2">
           <a
-            href="https://www.google.com/maps/place/Nawab+School+Of+Motoring/@52.6569,-1.0728,17z/data=!4m8!3m7!1s0x4877613682d1a7e9:0x7a2e5be5cc0c8e0!8m2!3d52.6569!4d-1.0728!9m1!1b1!16s%2Fg%2F11c5r7_9zz"
+            href={business.social.google}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
@@ -43,7 +44,7 @@ export function GoogleRating() {
             Google Reviews
           </a>
           <a
-            href="https://www.freeindex.co.uk/profile(nawab-school-of-motoring)_536371.htm"
+            href={business.social.freeindex}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-md border px-4 py-2 text-sm font-medium transition-colors hover:bg-secondary"

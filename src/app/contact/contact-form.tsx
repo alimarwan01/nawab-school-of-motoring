@@ -1,7 +1,6 @@
 "use client";
 
 import { useForm } from "react-hook-form";
-import { z } from "zod/v4";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -9,15 +8,8 @@ import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import { Loader2 } from "lucide-react";
 import { useState } from "react";
-
-const contactSchema = z.object({
-  name: z.string().min(2, "Please enter your name"),
-  phone: z.string().min(6, "Please enter a valid phone number"),
-  email: z.email("Please enter a valid email address"),
-  message: z.string().min(10, "Please enter a message (at least 10 characters)"),
-});
-
-type ContactFormData = z.infer<typeof contactSchema>;
+import { contactSchema, type ContactFormData } from "@/lib/schemas";
+import { business } from "@/lib/constants";
 
 export function ContactForm() {
   const [submitting, setSubmitting] = useState(false);
@@ -46,7 +38,7 @@ export function ContactForm() {
       reset();
     } catch {
       toast.error(
-        "Sorry, something went wrong. Please call us on 07977 589 345 instead."
+        `Sorry, something went wrong. Please call us on ${business.phone.display} instead.`
       );
     } finally {
       setSubmitting(false);

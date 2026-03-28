@@ -1,14 +1,23 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { animation } from "@/lib/constants";
 
 interface CountUpProps {
+  /** Target number to count up to */
   end: number;
+  /** Text appended after the number (e.g. "+" or ".0") */
   suffix?: string;
+  /** Animation duration in ms */
   duration?: number;
   className?: string;
 }
 
+/**
+ * Animated number counter.
+ * Counts from 0 to `end` when scrolled into view.
+ * Uses ease-out cubic for a natural deceleration feel.
+ */
 export function CountUp({
   end,
   suffix = "",
@@ -30,7 +39,7 @@ export function CountUp({
           observer.unobserve(el);
         }
       },
-      { threshold: 0.5 }
+      { threshold: animation.countUpThreshold }
     );
 
     observer.observe(el);
@@ -45,13 +54,10 @@ export function CountUp({
     function tick(now: number) {
       const elapsed = now - startTime;
       const progress = Math.min(elapsed / duration, 1);
-      // Ease out cubic
-      const eased = 1 - Math.pow(1 - progress, 3);
+      const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
       setValue(Math.round(eased * end));
 
-      if (progress < 1) {
-        requestAnimationFrame(tick);
-      }
+      if (progress < 1) requestAnimationFrame(tick);
     }
 
     requestAnimationFrame(tick);
