@@ -15,7 +15,8 @@ export default function HomePage() {
     <>
       {/* Hero — split layout with student photo */}
       <section className="bg-primary px-4 py-20 text-primary-foreground sm:py-28">
-        <div className="mx-auto max-w-6xl lg:px-8">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-2 lg:px-8">
+          <div>
             <AnimateIn from="none" delay={0} duration={500}>
               <p className="text-sm font-medium tracking-wide text-primary-foreground/60 uppercase">
                 DVSA Approved Instructor &middot; Leicester &amp; Luton
@@ -68,6 +69,47 @@ export default function HomePage() {
                 </Link>
               </div>
             </AnimateIn>
+          </div>
+
+          {/* Stacked student photos on the right */}
+          <div className="relative hidden h-80 lg:block">
+            <div className="absolute right-12 top-0 h-56 w-44 rotate-3 overflow-hidden rounded-xl shadow-2xl shadow-black/30 transition-transform duration-500 hover:rotate-0 hover:scale-105">
+              <Image
+                src="/students/halima-diriye.jpeg"
+                alt="Student who passed first time"
+                width={176}
+                height={224}
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <div className="absolute right-40 top-8 h-56 w-44 -rotate-3 overflow-hidden rounded-xl shadow-2xl shadow-black/30 transition-transform duration-500 hover:rotate-0 hover:scale-105">
+              <Image
+                src="/students/gurbaj-singh.jpeg"
+                alt="Student who passed with 2 minors"
+                width={176}
+                height={224}
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <div className="absolute right-0 top-20 h-56 w-44 rotate-6 overflow-hidden rounded-xl shadow-2xl shadow-black/30 transition-transform duration-500 hover:rotate-0 hover:scale-105">
+              <Image
+                src="/students/artur-lidzer.jpeg"
+                alt="Student who passed first attempt"
+                width={176}
+                height={224}
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <div className="absolute right-28 top-28 h-56 w-44 -rotate-6 overflow-hidden rounded-xl shadow-2xl shadow-black/30 transition-transform duration-500 hover:rotate-0 hover:scale-105">
+              <Image
+                src="/students/sandeep-kumar.jpeg"
+                alt="Student who passed first attempt"
+                width={176}
+                height={224}
+                className="h-full w-full object-cover"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
