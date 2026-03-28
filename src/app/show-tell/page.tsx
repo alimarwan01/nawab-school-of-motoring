@@ -7,62 +7,82 @@ export const metadata: Metadata = {
     "Current DVSA show me tell me questions for the UK practical driving test. 14 tell me questions and 7 show me questions.",
 };
 
-const tellMeQuestions = [
+const tellMeGroups = [
   {
-    question: "Tell me how you'd check that the brakes are working before starting a journey.",
-    answer: "Brakes should not feel spongy or slack. Test them as you set off — the vehicle should not pull to one side.",
+    category: "Brakes & Steering",
+    questions: [
+      {
+        question: "Tell me how you'd check that the brakes are working before starting a journey.",
+        answer: "Brakes should not feel spongy or slack. Test them as you set off — the vehicle should not pull to one side.",
+      },
+      {
+        question: "Tell me how you'd check the brake lights are working on this car.",
+        answer: "Turn on the ignition, press the brake pedal and use the reflection in a window, garage door, or ask someone to check behind.",
+      },
+      {
+        question: "Tell me how you'd check the power-assisted steering is working before starting a journey.",
+        answer: "Apply gentle pressure to the steering wheel when you start the engine. You should notice the steering become lighter — if it feels heavy, there may be a problem.",
+      },
+      {
+        question: "Tell me how you'd know if there was a problem with your anti-lock braking system.",
+        answer: "A warning light on the dashboard will illuminate if there is a fault with the ABS.",
+      },
+    ],
   },
   {
-    question: "Tell me where you'd find the information for the recommended tyre pressures for this car and how tyre pressures should be checked.",
-    answer: "The manufacturer's guide, inside the fuel filler cap, or door pillar. Use a reliable pressure gauge and check when tyres are cold.",
+    category: "Lights & Indicators",
+    questions: [
+      {
+        question: "Tell me how you'd check that the headlights and tail lights are working.",
+        answer: "Turn on the ignition if necessary, switch on the lights, then walk around the vehicle to check all headlights and tail lights are functioning.",
+      },
+      {
+        question: "Tell me how you'd check the direction indicators are working.",
+        answer: "Turn on the ignition, activate the indicators, and walk around the vehicle to check all are functioning correctly. Use the hazard warning switch to check them all at once.",
+      },
+      {
+        question: "Tell me how you switch your headlight from dipped to main beam and explain how you'd know the main beam is on.",
+        answer: "Operate the stalk to switch between dipped and main beam. A blue warning light on the dashboard will illuminate when main beam is on.",
+      },
+      {
+        question: "Tell me how you'd switch on the rear fog light(s) and explain when you'd use it/them.",
+        answer: "Operate the rear fog light switch. Use when visibility is seriously reduced, generally below 100 metres. Remember to switch them off when visibility improves.",
+      },
+    ],
   },
   {
-    question: "Tell me how you make sure your head restraint is correctly adjusted so it provides the best protection in the event of a crash.",
-    answer: "The head restraint should be adjusted so the rigid part is at least as high as the eye or top of the ears, and as close to the back of the head as is comfortable.",
+    category: "Tyres & Safety",
+    questions: [
+      {
+        question: "Tell me where you'd find the information for the recommended tyre pressures for this car and how tyre pressures should be checked.",
+        answer: "The manufacturer's guide, inside the fuel filler cap, or door pillar. Use a reliable pressure gauge and check when tyres are cold.",
+      },
+      {
+        question: "Tell me how you'd check the tyres to ensure that they have sufficient tread depth and that their general condition is safe to use on the road.",
+        answer: "The legal minimum tread depth is 1.6mm across the central three-quarters of the breadth and around the entire circumference. Also check for cuts, bulges or any damage.",
+      },
+      {
+        question: "Tell me how you make sure your head restraint is correctly adjusted so it provides the best protection in the event of a crash.",
+        answer: "The head restraint should be adjusted so the rigid part is at least as high as the eye or top of the ears, and as close to the back of the head as is comfortable.",
+      },
+    ],
   },
   {
-    question: "Tell me how you'd check the tyres to ensure that they have sufficient tread depth and that their general condition is safe to use on the road.",
-    answer: "The legal minimum tread depth is 1.6mm across the central three-quarters of the breadth and around the entire circumference. Also check for cuts, bulges or any damage.",
-  },
-  {
-    question: "Tell me how you'd check that the headlights and tail lights are working.",
-    answer: "Turn on the ignition if necessary, switch on the lights, then walk around the vehicle to check all headlights and tail lights are functioning.",
-  },
-  {
-    question: "Tell me how you'd know if there was a problem with your anti-lock braking system.",
-    answer: "A warning light on the dashboard will illuminate if there is a fault with the ABS.",
-  },
-  {
-    question: "Tell me how you'd check the direction indicators are working.",
-    answer: "Turn on the ignition, activate the indicators, and walk around the vehicle to check all are functioning correctly. Use the hazard warning switch to check them all at once.",
-  },
-  {
-    question: "Tell me how you'd check the brake lights are working on this car.",
-    answer: "Turn on the ignition, press the brake pedal and use the reflection in a window, garage door, or ask someone to check behind.",
-  },
-  {
-    question: "Tell me how you'd check the power-assisted steering is working before starting a journey.",
-    answer: "Apply gentle pressure to the steering wheel when you start the engine. You should notice the steering become lighter — if it feels heavy, there may be a problem.",
-  },
-  {
-    question: "Tell me how you'd switch on the rear fog light(s) and explain when you'd use it/them.",
-    answer: "Operate the rear fog light switch (demonstrate). Use when visibility is seriously reduced, generally below 100 metres. Remember to switch them off when visibility improves.",
-  },
-  {
-    question: "Tell me how you switch your headlight from dipped to main beam and explain how you'd know the main beam is on.",
-    answer: "Operate the stalk to switch between dipped and main beam. A blue warning light on the dashboard will illuminate when main beam is on.",
-  },
-  {
-    question: "Open the bonnet and tell me how you'd check that the engine has sufficient oil.",
-    answer: "Pull out the dipstick, wipe it clean, reinsert and pull out again. The oil level should be between the minimum and maximum markers.",
-  },
-  {
-    question: "Open the bonnet and tell me how you'd check that the engine has sufficient engine coolant.",
-    answer: "Locate the coolant reservoir and check the level is between the minimum and maximum markings. Top up with the correct coolant if needed. Do not open the cap when hot.",
-  },
-  {
-    question: "Open the bonnet and tell me how you'd check that you have a safe level of hydraulic brake fluid.",
-    answer: "Locate the brake fluid reservoir and check the level is between the minimum and maximum markings.",
+    category: "Under the Bonnet",
+    questions: [
+      {
+        question: "Open the bonnet and tell me how you'd check that the engine has sufficient oil.",
+        answer: "Pull out the dipstick, wipe it clean, reinsert and pull out again. The oil level should be between the minimum and maximum markers.",
+      },
+      {
+        question: "Open the bonnet and tell me how you'd check that the engine has sufficient engine coolant.",
+        answer: "Locate the coolant reservoir and check the level is between the minimum and maximum markings. Top up with the correct coolant if needed. Do not open the cap when hot.",
+      },
+      {
+        question: "Open the bonnet and tell me how you'd check that you have a safe level of hydraulic brake fluid.",
+        answer: "Locate the brake fluid reservoir and check the level is between the minimum and maximum markings.",
+      },
+    ],
   },
 ];
 
@@ -97,6 +117,8 @@ const showMeQuestions = [
   },
 ];
 
+let globalTellMeIndex = 0;
+
 export default function ShowTellPage() {
   return (
     <>
@@ -129,34 +151,58 @@ export default function ShowTellPage() {
             &ldquo;Tell me&rdquo; questions
           </h2>
           <p className="mt-1 text-sm text-muted-foreground">
-            Asked before you start driving &middot; {tellMeQuestions.length} possible questions
+            Asked before you start driving &middot; 14 possible questions
           </p>
-          <div className="mt-8 space-y-8">
-            {tellMeQuestions.map((q, i) => (
-              <div key={i} className="border-b pb-8 last:border-0">
-                <p className="font-medium">{q.question}</p>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  {q.answer}
-                </p>
-              </div>
-            ))}
-          </div>
 
-          <h2 className="mt-16 text-2xl font-bold">
-            &ldquo;Show me&rdquo; questions
-          </h2>
-          <p className="mt-1 text-sm text-muted-foreground">
-            Asked while you&apos;re driving &middot; {showMeQuestions.length} possible questions
-          </p>
-          <div className="mt-8 space-y-8">
-            {showMeQuestions.map((q, i) => (
-              <div key={i} className="border-b pb-8 last:border-0">
-                <p className="font-medium">{q.question}</p>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  {q.answer}
-                </p>
+          {tellMeGroups.map((group) => (
+            <div key={group.category} className="mt-10">
+              <h3 className="text-sm font-semibold uppercase tracking-wide text-primary">
+                {group.category}
+              </h3>
+              <div className="mt-4 space-y-0 divide-y">
+                {group.questions.map((q) => {
+                  globalTellMeIndex++;
+                  const num = globalTellMeIndex;
+                  return (
+                    <div key={num} className="flex gap-4 py-5">
+                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-foreground">
+                        {num}
+                      </span>
+                      <div>
+                        <p className="font-medium">{q.question}</p>
+                        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                          {q.answer}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
-            ))}
+            </div>
+          ))}
+
+          <div className="mt-16 border-t pt-16">
+            <h2 className="text-2xl font-bold">
+              &ldquo;Show me&rdquo; questions
+            </h2>
+            <p className="mt-1 text-sm text-muted-foreground">
+              Asked while you&apos;re driving &middot; {showMeQuestions.length} possible questions
+            </p>
+            <div className="mt-8 space-y-0 divide-y">
+              {showMeQuestions.map((q, i) => (
+                <div key={i} className="flex gap-4 py-5">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent text-sm font-bold text-accent-foreground">
+                    {i + 1}
+                  </span>
+                  <div>
+                    <p className="font-medium">{q.question}</p>
+                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                      {q.answer}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
