@@ -35,7 +35,7 @@ export default function HomePage() {
             <AnimateIn from="up" delay={450} duration={600}>
               <div className="mt-8 inline-flex items-center gap-4">
                 <Image
-                  src="/first-time-pass-badge.png"
+                  src="/first-time-pass-badge.jpeg"
                   alt="Nawab Motoring First Time Pass badge"
                   width={96}
                   height={96}
