@@ -329,6 +329,7 @@ export default function HomePage() {
                         <p className="text-xs text-primary">{t.result}</p>
                       )}
                       <p className="mt-1 text-xs text-muted-foreground">
+                        {t.date && <>{t.date} &middot; </>}
                         View on {t.source === "google" ? "Google" : t.source === "freeindex" ? "FreeIndex" : "Website"} &rarr;
                       </p>
                     </div>

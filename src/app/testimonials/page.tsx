@@ -66,6 +66,7 @@ export default function TestimonialsPage() {
                   &ldquo;{t.quote}&rdquo;
                 </p>
                 <p className="mt-2 text-xs text-muted-foreground">
+                  {t.date && <>{t.date} &middot; </>}
                   View on {t.source === "google" ? "Google" : t.source === "freeindex" ? "FreeIndex" : "Website"} &rarr;
                 </p>
               </div>
