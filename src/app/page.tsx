@@ -235,9 +235,6 @@ export default function HomePage() {
                     {t.result && (
                       <p className="text-sm text-primary">{t.result}</p>
                     )}
-                    <p className="text-xs text-muted-foreground">
-                      via {t.source === "google" ? "Google" : t.source === "freeindex" ? "FreeIndex" : "Website"}
-                    </p>
                   </div>
                 </div>
               </AnimateIn>

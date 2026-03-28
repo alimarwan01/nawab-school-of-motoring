@@ -9,12 +9,6 @@ export const metadata: Metadata = {
     "Real reviews from Google, FreeIndex, and students who passed their driving test with Nawab School of Motoring in Leicester.",
 };
 
-const sourceLabels = {
-  google: "Google",
-  freeindex: "FreeIndex",
-  website: "Website",
-};
-
 export default function TestimonialsPage() {
   const passCount = testimonials.filter((t) => t.result).length;
 
@@ -58,14 +52,9 @@ export default function TestimonialsPage() {
                 )}
                 <div className="min-w-0">
                   <p className="text-sm font-semibold">{t.name}</p>
-                  <div className="flex items-center gap-2">
-                    {t.result && (
-                      <p className="text-xs text-primary">{t.result}</p>
-                    )}
-                    <span className="text-xs text-muted-foreground">
-                      via {sourceLabels[t.source]}
-                    </span>
-                  </div>
+                  {t.result && (
+                    <p className="text-xs text-primary">{t.result}</p>
+                  )}
                 </div>
               </div>
               <p className="mt-3 text-sm leading-relaxed text-foreground/80">
