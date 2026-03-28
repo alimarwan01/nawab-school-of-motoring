@@ -1,0 +1,46 @@
+export interface Testimonial {
+  name: string;
+  quote: string;
+  result?: string;
+}
+
+export const testimonials: Testimonial[] = [
+  { name: "Raya Saleh Ali Juma", quote: "Best driving instructor I could have asked for. Made me feel comfortable from the very first lesson.", result: "Passed first time" },
+  { name: "Halima Diriye", quote: "Lovely experience learning with Nawab. Very supportive, punctual and professional.", result: "Passed first time" },
+  { name: "Arronpreet Singh", quote: "Excellent driving instructor who helped me perfect my skills. Calm, patient and very knowledgeable.", result: undefined },
+  { name: "Rayhaan Lakdawala", quote: "Great instructor who provides clear explanations and is very patient. Highly recommended.", result: "Passed first time with 1 minor" },
+  { name: "Dhanesh Sedhumadhavan", quote: "Very professional and knowledgeable. Made sure I was fully prepared for my test.", result: undefined },
+  { name: "Sandeep Kumar", quote: "Very calm, supportive. Teaches with patience and nicely explains rules.", result: "Passed first attempt" },
+  { name: "Gurbaj Singh", quote: "Excellent person and instructor. Guided me in detail about every step.", result: "Passed first attempt with 2 minors" },
+  { name: "Akhil Roy", quote: "Patient, professional instructor who explained everything clearly.", result: undefined },
+  { name: "Artur Lidzer", quote: "Fantastic instructor who explains everything very clearly and calmly.", result: "Passed first attempt" },
+  { name: "Ansh Panjeta", quote: "Wonderful experience. Very patient and professional person.", result: "Passed first time" },
+  { name: "Amarpal Singh", quote: "Very good instructor. Went through every topic thoroughly.", result: "Passed with zero faults" },
+  { name: "Rajaa Hami", quote: "Friendly, professional, patient approach. Everything explained clearly.", result: "Passed with 1 minor" },
+  { name: "Mohammed Yusuf Zaman", quote: "Calm, patient, extremely knowledgeable. Lessons were well-structured.", result: "Passed with 2 minors" },
+  { name: "Rohan Amrat", quote: "Highly professional, patient. Ensures comfortable learning environment.", result: "Passed first time with zero faults" },
+  { name: "Pyarjit Singh", quote: "Patient, professional, always made me feel comfortable. Clear explanations.", result: "Passed first attempt" },
+  { name: "Muhammed Faisal Ansari", quote: "Excellent person and instructor. Guided me in detail about every step.", result: undefined },
+  { name: "Vajidali Saiyed", quote: "Incredibly patient, calm, professional. Clear explanations and encouragement.", result: "Passed first attempt" },
+  { name: "Amelia Mathews", quote: "Great instructor, very patient. Would recommend to anyone.", result: "Passed first time" },
+  { name: "Dhaval Vani", quote: "Excellent driving instructor. Focuses on every mistake with clear guidance.", result: undefined },
+  { name: "Jackson George", quote: "Patient, clear, focused on building confidence. Every lesson was helpful.", result: "Passed first attempt" },
+  { name: "Sania Kaur", quote: "Patient and friendly driving instructor. Made the learning experience better.", result: "Passed with zero faults" },
+  { name: "Jagjeet Singh", quote: "Fully satisfied. Passed in first attempt thanks to his excellent teaching.", result: "Passed first attempt" },
+  { name: "Adyaan Jussab", quote: "Amazing instructor. Passed first time with only 2 minors.", result: "Passed first time with 2 minors" },
+  { name: "Suhail Said", quote: "Amazing instructor that prepared me for the exam. Extremely professional.", result: "Passed first time" },
+  { name: "Avtar Rattu", quote: "Very friendly and patient instructor. Gained new knowledge from him.", result: undefined },
+  { name: "Dhara Pithadia", quote: "Very good instructor, taught very well and helped me pass first time.", result: "Passed first time" },
+  { name: "Maninderjit Singh", quote: "Great instructor. Made learning very easy. Passed my test first attempt.", result: "Passed first attempt" },
+  { name: "Hemalkumar Patel", quote: "Amazing experience where I learned new techniques and manoeuvres.", result: undefined },
+  { name: "Simranjeet Singh", quote: "Great trainer. I passed my driving licence at first attempt. Thank you.", result: "Passed first attempt" },
+  { name: "Roshni Dhirajlal", quote: "Very patient and knowledgeable instructor. Taught exactly what I needed to learn.", result: "Passed first time" },
+  { name: "Deep Dudhat", quote: "Patient, professional, extremely knowledgeable. Well-structured lessons.", result: "Passed first attempt" },
+  { name: "Krishna Mistry", quote: "Excellent teaching. Lessons were clear, structured and tailored to build confidence.", result: "Passed first attempt" },
+  { name: "Sumitra Devi", quote: "Excellent teaching skills, friendly in nature and humble.", result: "Passed" },
+  { name: "Srushti Patel", quote: "He is a good instructor. Very patient and helpful.", result: undefined },
+  { name: "Lovepreet Kaur", quote: "Leicester has the best instructor. Got me through successfully.", result: "Passed" },
+  { name: "Suhana Ilyas Fasa", quote: "Great experience learning with Nawab. Very supportive throughout.", result: "Passed" },
+  { name: "Aaqib Nawab", quote: "Excellent instruction, thorough preparation for the test.", result: "Passed" },
+  { name: "Bikramjeet Bhatti", quote: "Very professional and supportive. Helped me achieve my goal.", result: "Passed" },
+];
