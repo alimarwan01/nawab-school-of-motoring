@@ -2,6 +2,7 @@ import { Phone } from "lucide-react";
 import Image from "next/image";
 import { CTABanner } from "@/components/cta-banner";
 import { AnimateIn } from "@/components/animate-in";
+import { FirstTimePassBadge } from "@/components/first-time-pass-badge";
 import { WallOfPasses } from "@/components/wall-of-passes";
 import { GoogleRating } from "@/components/google-rating";
 import { StatsStrip } from "./stats-strip";
@@ -33,20 +34,14 @@ export default function HomePage() {
               </p>
             </AnimateIn>
             <AnimateIn from="up" delay={450} duration={600}>
-              <div className="mt-8 inline-flex items-center gap-3 rounded-lg bg-primary-foreground/10 px-4 py-3">
-                <Image
-                  src="/dsa-badge.jpg"
-                  alt="DVSA Approved Driving Instructor"
-                  width={44}
-                  height={44}
-                  className="h-11 w-11 rounded object-contain"
-                />
+              <div className="mt-8 inline-flex items-center gap-4">
+                <FirstTimePassBadge className="h-20 w-20 text-accent sm:h-24 sm:w-24" />
                 <div>
-                  <p className="text-sm font-semibold text-primary-foreground">
-                    200+ first-time passes
+                  <p className="text-2xl font-bold text-primary-foreground sm:text-3xl">
+                    200+
                   </p>
-                  <p className="text-xs text-primary-foreground/60">
-                    DVSA Approved &middot; 5.0 stars on Google
+                  <p className="text-sm text-primary-foreground/70">
+                    first-time passes
                   </p>
                 </div>
               </div>
