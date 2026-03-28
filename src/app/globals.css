@@ -95,6 +95,12 @@
   }
 }
 
+input:focus, textarea:focus {
+  border-color: oklch(0.35 0.10 155) !important;
+  box-shadow: 0 0 0 3px oklch(0.35 0.10 155 / 0.15);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
 @keyframes subtle-pulse {
   0%, 100% { box-shadow: 0 0 0 0 rgba(200, 160, 60, 0); }
   50% { box-shadow: 0 0 0 8px rgba(200, 160, 60, 0.15); }

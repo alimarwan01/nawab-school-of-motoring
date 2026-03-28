@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { CTABanner } from "@/components/cta-banner";
+import { AnimateIn } from "@/components/animate-in";
 import { QuestionCard } from "./question-card";
 
 export const metadata: Metadata = {
@@ -87,29 +88,35 @@ export default function ShowTellPage() {
 
       <section className="px-4 py-16 sm:py-24">
         <div className="mx-auto max-w-3xl">
-          <h2 className="text-2xl font-bold">
-            &ldquo;Tell me&rdquo; questions
-          </h2>
-          <p className="mt-1 text-sm text-muted-foreground">
-            Asked before you start driving &middot; 14 possible questions
-          </p>
+          <AnimateIn>
+            <h2 className="text-2xl font-bold">
+              &ldquo;Tell me&rdquo; questions
+            </h2>
+            <p className="mt-1 text-sm text-muted-foreground">
+              Asked before you start driving &middot; 14 possible questions
+            </p>
+          </AnimateIn>
 
           {tellMeGroups.map((group) => (
             <div key={group.category} className="mt-10">
-              <h3 className="text-sm font-semibold uppercase tracking-wide text-primary">
-                {group.category}
-              </h3>
+              <AnimateIn from="up">
+                <h3 className="text-sm font-semibold uppercase tracking-wide text-primary">
+                  {group.category}
+                </h3>
+              </AnimateIn>
               <div className="mt-4 divide-y">
                 {group.questions.map((q) => {
                   tellMeIndex++;
+                  const idx = tellMeIndex;
                   return (
-                    <QuestionCard
-                      key={tellMeIndex}
-                      number={tellMeIndex}
-                      question={q.question}
-                      answer={q.answer}
-                      variant="green"
-                    />
+                    <AnimateIn key={idx} from="left" delay={(idx % 4) * 80}>
+                      <QuestionCard
+                        number={idx}
+                        question={q.question}
+                        answer={q.answer}
+                        variant="green"
+                      />
+                    </AnimateIn>
                   );
                 })}
               </div>
@@ -117,21 +124,24 @@ export default function ShowTellPage() {
           ))}
 
           <div className="mt-16 border-t pt-16">
-            <h2 className="text-2xl font-bold">
-              &ldquo;Show me&rdquo; questions
-            </h2>
-            <p className="mt-1 text-sm text-muted-foreground">
-              Asked while you&apos;re driving &middot; {showMeQuestions.length} possible questions
-            </p>
+            <AnimateIn>
+              <h2 className="text-2xl font-bold">
+                &ldquo;Show me&rdquo; questions
+              </h2>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Asked while you&apos;re driving &middot; {showMeQuestions.length} possible questions
+              </p>
+            </AnimateIn>
             <div className="mt-8 divide-y">
               {showMeQuestions.map((q, i) => (
-                <QuestionCard
-                  key={i}
-                  number={i + 1}
-                  question={q.question}
-                  answer={q.answer}
-                  variant="amber"
-                />
+                <AnimateIn key={i} from="right" delay={i * 80}>
+                  <QuestionCard
+                    number={i + 1}
+                    question={q.question}
+                    answer={q.answer}
+                    variant="amber"
+                  />
+                </AnimateIn>
               ))}
             </div>
           </div>

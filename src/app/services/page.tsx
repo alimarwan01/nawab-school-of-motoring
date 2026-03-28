@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { CTABanner } from "@/components/cta-banner";
+import { AnimateIn } from "@/components/animate-in";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -46,27 +47,32 @@ export default function ServicesPage() {
     <>
       <section className="bg-primary px-4 py-16 text-primary-foreground sm:py-20">
         <div className="mx-auto max-w-6xl lg:px-8">
-          <h1 className="text-3xl font-bold sm:text-4xl">Services</h1>
-          <p className="mt-3 max-w-xl text-primary-foreground/70">
-            Everything from your very first lesson to advanced post-test
-            training. Male and female instructors available.
-          </p>
+          <AnimateIn from="left">
+            <h1 className="text-3xl font-bold sm:text-4xl">Services</h1>
+            <p className="mt-3 max-w-xl text-primary-foreground/70">
+              Everything from your very first lesson to advanced post-test
+              training. Male and female instructors available.
+            </p>
+          </AnimateIn>
         </div>
       </section>
 
       <section className="px-4 py-16 sm:py-24">
         <div className="mx-auto max-w-6xl lg:px-8">
           <div className="divide-y">
-            {services.map((service) => (
-              <div
+            {services.map((service, i) => (
+              <AnimateIn
                 key={service.title}
-                className="grid gap-2 py-8 first:pt-0 last:pb-0 sm:grid-cols-3 sm:gap-8"
+                from={i % 2 === 0 ? "left" : "right"}
+                delay={i * 80}
               >
-                <h2 className="text-lg font-semibold">{service.title}</h2>
-                <p className="text-muted-foreground sm:col-span-2">
-                  {service.description}
-                </p>
-              </div>
+                <div className="grid gap-2 py-8 first:pt-0 last:pb-0 sm:grid-cols-3 sm:gap-8">
+                  <h2 className="text-lg font-semibold">{service.title}</h2>
+                  <p className="text-muted-foreground sm:col-span-2">
+                    {service.description}
+                  </p>
+                </div>
+              </AnimateIn>
             ))}
           </div>
         </div>
@@ -74,52 +80,37 @@ export default function ServicesPage() {
 
       <section className="border-t bg-white px-4 py-16 sm:py-24">
         <div className="mx-auto max-w-6xl lg:px-8">
-          <h2 className="text-2xl font-bold">What&apos;s included</h2>
+          <AnimateIn>
+            <h2 className="text-2xl font-bold">What&apos;s included</h2>
+          </AnimateIn>
           <ul className="mt-6 space-y-3 text-muted-foreground">
-            <li className="flex gap-3">
-              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-              <span>
-                <strong className="text-foreground">Door-to-door service</strong>{" "}
-                — picked up from home, work, or university and dropped back
-                afterwards
-              </span>
-            </li>
-            <li className="flex gap-3">
-              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-              <span>
-                <strong className="text-foreground">
-                  Modern, air-conditioned car
-                </strong>{" "}
-                — dual-controlled for your safety and comfort
-              </span>
-            </li>
-            <li className="flex gap-3">
-              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-              <span>
-                <strong className="text-foreground">
-                  No extra charge for evenings &amp; weekends
-                </strong>{" "}
-                — same rate, whenever suits you
-              </span>
-            </li>
-            <li className="flex gap-3">
-              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
-              <span>
-                <strong className="text-foreground">
-                  Block booking discounts
-                </strong>{" "}
-                — save when you book 5, 10, or 20 hours in advance
-              </span>
-            </li>
+            {[
+              { bold: "Door-to-door service", text: "— picked up from home, work, or university and dropped back afterwards" },
+              { bold: "Modern, air-conditioned car", text: "— dual-controlled for your safety and comfort" },
+              { bold: "No extra charge for evenings & weekends", text: "— same rate, whenever suits you" },
+              { bold: "Block booking discounts", text: "— save when you book 5, 10, or 20 hours in advance" },
+            ].map((item, i) => (
+              <AnimateIn key={item.bold} from="up" delay={i * 100}>
+                <li className="flex gap-3">
+                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                  <span>
+                    <strong className="text-foreground">{item.bold}</strong>{" "}
+                    {item.text}
+                  </span>
+                </li>
+              </AnimateIn>
+            ))}
           </ul>
-          <div className="mt-8">
-            <Link
-              href="/pricing"
-              className="text-sm font-medium text-primary underline underline-offset-4 hover:text-primary/80"
-            >
-              See all prices &rarr;
-            </Link>
-          </div>
+          <AnimateIn from="up" delay={400}>
+            <div className="mt-8">
+              <Link
+                href="/pricing"
+                className="text-sm font-medium text-primary underline underline-offset-4 hover:text-primary/80"
+              >
+                See all prices &rarr;
+              </Link>
+            </div>
+          </AnimateIn>
         </div>
       </section>
 
