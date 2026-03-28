@@ -208,9 +208,6 @@ export default function PricingPage() {
                     </table>
                   </div>
                 ))}
-                <p className="text-xs text-muted-foreground">
-                  * Terms &amp; conditions apply.
-                </p>
               </div>
             </div>
           </AnimateIn>
