@@ -304,7 +304,12 @@ export default function HomePage() {
           <div className="mt-10 grid gap-8 sm:grid-cols-3">
             {featuredReviews.map((t, i) => (
               <AnimateIn key={t.name} from="up" delay={i * 150}>
-                <div className="overflow-hidden rounded-lg border bg-white">
+                <a
+                  href={t.sourceUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block overflow-hidden rounded-lg border bg-white transition-shadow duration-200 hover:shadow-md"
+                >
                   {t.photo && (
                     <Image
                       src={t.photo}
@@ -323,9 +328,12 @@ export default function HomePage() {
                       {t.result && (
                         <p className="text-xs text-primary">{t.result}</p>
                       )}
+                      <p className="mt-1 text-xs text-muted-foreground">
+                        View on {t.source === "google" ? "Google" : t.source === "freeindex" ? "FreeIndex" : "Website"} &rarr;
+                      </p>
                     </div>
                   </div>
-                </div>
+                </a>
               </AnimateIn>
             ))}
           </div>

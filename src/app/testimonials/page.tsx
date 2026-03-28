@@ -32,9 +32,12 @@ export default function TestimonialsPage() {
       <section className="px-4 py-16 sm:py-24">
         <div className="mx-auto max-w-6xl columns-1 gap-5 sm:columns-2 lg:columns-3 lg:px-8">
           {testimonials.map((t, i) => (
-            <div
+            <a
               key={`${t.name}-${i}`}
-              className="mb-5 break-inside-avoid overflow-hidden rounded-lg border bg-white"
+              href={t.sourceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mb-5 block break-inside-avoid overflow-hidden rounded-lg border bg-white transition-shadow duration-200 hover:shadow-md"
             >
               {t.photo && (
                 <Image
@@ -62,8 +65,11 @@ export default function TestimonialsPage() {
                 <p className="mt-3 text-sm leading-relaxed text-foreground/80">
                   &ldquo;{t.quote}&rdquo;
                 </p>
+                <p className="mt-2 text-xs text-muted-foreground">
+                  View on {t.source === "google" ? "Google" : t.source === "freeindex" ? "FreeIndex" : "Website"} &rarr;
+                </p>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </section>
