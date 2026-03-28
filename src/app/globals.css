@@ -94,3 +94,8 @@
     @apply font-sans scroll-smooth;
   }
 }
+
+@keyframes subtle-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(200, 160, 60, 0); }
+  50% { box-shadow: 0 0 0 8px rgba(200, 160, 60, 0.15); }
+}
