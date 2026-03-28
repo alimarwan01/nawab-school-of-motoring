@@ -2,16 +2,15 @@
 
 import Link from "next/link";
 import { Phone, Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
   { href: "/pricing", label: "Pricing" },
-  { href: "/testimonials", label: "Testimonials" },
-  { href: "/show-tell", label: "Show Me / Tell Me" },
-  { href: "/routes", label: "Test Routes" },
+  { href: "/testimonials", label: "Reviews" },
+  { href: "/show-tell", label: "Show/Tell" },
+  { href: "/routes", label: "Routes" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -19,23 +18,18 @@ export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b bg-white/95 backdrop-blur-sm">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-        <Link href="/" className="flex flex-col">
-          <span className="text-lg font-bold tracking-tight text-primary sm:text-xl">
-            Nawab School of Motoring
-          </span>
-          <span className="text-xs text-muted-foreground">
-            DVSA Approved Driving Instructor
-          </span>
+    <header className="sticky top-0 z-50 border-b border-border/50 bg-white/95 backdrop-blur-sm">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 lg:px-8">
+        <Link href="/" className="text-lg font-bold tracking-tight text-primary">
+          Nawab School of Motoring
         </Link>
 
-        <nav className="hidden items-center gap-1 lg:flex">
+        <nav className="hidden items-center gap-6 lg:flex">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="rounded-md px-3 py-2 text-sm font-medium text-foreground/80 transition-colors hover:bg-secondary hover:text-foreground"
+              className="text-sm text-foreground/70 transition-colors hover:text-foreground"
             >
               {link.label}
             </Link>
@@ -43,41 +37,42 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <a href="tel:07977589345" className="hidden sm:block">
-            <Button className="gap-2 bg-accent text-accent-foreground hover:bg-accent/90">
-              <Phone className="h-4 w-4" />
-              <span>07977 589 345</span>
-            </Button>
+          <a
+            href="tel:07977589345"
+            className="hidden items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 sm:flex"
+          >
+            <Phone className="h-3.5 w-3.5" />
+            07977 589 345
           </a>
-          <a href="tel:07977589345" className="sm:hidden">
-            <Button size="icon" className="bg-accent text-accent-foreground hover:bg-accent/90">
-              <Phone className="h-4 w-4" />
-            </Button>
+          <a
+            href="tel:07977589345"
+            className="flex items-center justify-center rounded-md bg-primary p-2 text-primary-foreground sm:hidden"
+            aria-label="Call us"
+          >
+            <Phone className="h-4 w-4" />
           </a>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="rounded-md p-2 text-foreground lg:hidden"
+            className="rounded-md p-2 text-foreground/70 lg:hidden"
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
           >
-            {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
       </div>
 
       {mobileOpen && (
-        <nav className="border-t bg-white px-4 py-4 lg:hidden">
-          <div className="flex flex-col gap-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setMobileOpen(false)}
-                className="rounded-md px-3 py-2.5 text-sm font-medium text-foreground/80 transition-colors hover:bg-secondary hover:text-foreground"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
+        <nav className="border-t bg-white px-4 pb-4 pt-2 lg:hidden">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              onClick={() => setMobileOpen(false)}
+              className="block py-2.5 text-sm text-foreground/70 transition-colors hover:text-foreground"
+            >
+              {link.label}
+            </Link>
+          ))}
         </nav>
       )}
     </header>

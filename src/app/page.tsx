@@ -1,234 +1,207 @@
-import { Phone, Car, Clock, Award, MapPin, Users, Shield, Star } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { Phone } from "lucide-react";
 import { CTABanner } from "@/components/cta-banner";
 import { testimonials } from "@/data/testimonials";
 import Link from "next/link";
 
-const features = [
-  {
-    icon: Award,
-    title: "DVSA Approved",
-    description: "Fully qualified and DVSA approved driving instructor with years of experience.",
-  },
-  {
-    icon: Star,
-    title: "High Pass Rate",
-    description: "Proven track record of first-time passes. Many students pass with zero faults.",
-  },
-  {
-    icon: Car,
-    title: "Modern Vehicle",
-    description: "Learn in a modern, dual-controlled, air-conditioned car for maximum comfort.",
-  },
-  {
-    icon: Clock,
-    title: "Flexible Hours",
-    description: "Evenings and weekends available at no extra cost. Lessons that fit your schedule.",
-  },
-  {
-    icon: MapPin,
-    title: "Door-to-Door",
-    description: "Convenient pick-up and drop-off from your home, work or university.",
-  },
-  {
-    icon: Users,
-    title: "Patient Instruction",
-    description: "Friendly, calm and patient approach. Learn at your own pace without pressure.",
-  },
-];
-
-const featuredTestimonials = testimonials.filter((t) => t.result).slice(0, 3);
+const featuredReviews = testimonials.filter((t) => t.result).slice(0, 3);
 
 export default function HomePage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-primary px-4 py-20 text-primary-foreground sm:py-28 lg:py-36">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.05),transparent_70%)]" />
-        <div className="relative mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary-foreground/20 bg-primary-foreground/10 px-4 py-1.5 text-sm">
-              <Shield className="h-4 w-4" />
-              DVSA Approved &amp; Pass Plus Certified
-            </div>
-            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-              Learn to Drive with{" "}
-              <span className="text-accent">Confidence</span>
-            </h1>
-            <p className="mt-6 text-lg leading-relaxed text-primary-foreground/80 sm:text-xl">
-              Friendly, punctual, patient and professional driving instruction
-              in Leicester &amp; Luton. High first-time pass rate with lessons
-              starting from just &pound;28 per hour.
-            </p>
-            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <a href="tel:07977589345">
-                <Button
-                  size="lg"
-                  className="gap-2 bg-accent px-8 text-lg text-accent-foreground hover:bg-accent/90"
-                >
-                  <Phone className="h-5 w-5" />
-                  Call Now: 07977 589 345
-                </Button>
-              </a>
-              <Link href="/pricing">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-primary-foreground/30 px-8 text-lg text-primary-foreground hover:bg-primary-foreground/10"
-                >
-                  View Prices
-                </Button>
-              </Link>
-            </div>
-            <p className="mt-4 text-sm text-primary-foreground/60">
-              Block booking discounts available &middot; No extra charge for
-              evenings &amp; weekends
-            </p>
+      {/* Hero — left-aligned, direct, no fluff */}
+      <section className="bg-primary px-4 py-20 text-primary-foreground sm:py-28">
+        <div className="mx-auto max-w-6xl lg:px-8">
+          <p className="text-sm font-medium tracking-wide text-primary-foreground/60 uppercase">
+            DVSA Approved Instructor &middot; Leicester &amp; Luton
+          </p>
+          <h1 className="mt-4 max-w-2xl text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
+            Driving Lessons in Leicester
+          </h1>
+          <p className="mt-4 max-w-xl text-lg text-primary-foreground/70">
+            Patient, friendly instruction that gets you on the road. High
+            first-time pass rate with lessons from &pound;28/hr.
+          </p>
+          <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
+            <a
+              href="tel:07977589345"
+              className="inline-flex items-center gap-2 rounded-md bg-accent px-6 py-3 text-base font-medium text-accent-foreground transition-colors hover:bg-accent/90"
+            >
+              <Phone className="h-4 w-4" />
+              07977 589 345
+            </a>
+            <Link
+              href="/pricing"
+              className="text-sm text-primary-foreground/60 underline underline-offset-4 transition-colors hover:text-primary-foreground"
+            >
+              View all prices
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Features Grid */}
+      {/* Stats strip — warm amber, just facts */}
+      <section className="bg-accent px-4 py-4">
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-8 gap-y-2 text-sm font-medium text-accent-foreground lg:px-8">
+          <span>38+ Students Passed</span>
+          <span className="hidden text-accent-foreground/40 sm:inline">/</span>
+          <span>DVSA Approved</span>
+          <span className="hidden text-accent-foreground/40 sm:inline">/</span>
+          <span>First-Time Pass Specialists</span>
+          <span className="hidden text-accent-foreground/40 sm:inline">/</span>
+          <span>Evenings &amp; Weekends</span>
+        </div>
+      </section>
+
+      {/* How it works — simple numbered steps, no cards */}
       <section className="px-4 py-16 sm:py-24">
-        <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold tracking-tight">
-              Why Choose Nawab School of Motoring?
-            </h2>
-            <p className="mt-3 text-muted-foreground">
-              Everything you need to pass your test first time
-            </p>
-          </div>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {features.map((feature) => (
-              <Card
-                key={feature.title}
-                className="border-0 bg-secondary/50 transition-colors hover:bg-secondary"
-              >
-                <CardContent className="p-6">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10">
-                    <feature.icon className="h-6 w-6 text-accent" />
-                  </div>
-                  <h3 className="mt-4 text-lg font-semibold">{feature.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                    {feature.description}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing Snapshot */}
-      <section className="border-y bg-white px-4 py-16 sm:py-24">
-        <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold tracking-tight">
-              Simple, Transparent Pricing
-            </h2>
-            <p className="mt-3 text-muted-foreground">
-              Competitive rates with discounts for block bookings
-            </p>
-          </div>
-          <div className="mt-12 grid gap-6 sm:grid-cols-3">
-            <Card className="text-center">
-              <CardContent className="p-8">
-                <p className="text-sm font-medium text-muted-foreground">
-                  Single Lesson
+        <div className="mx-auto max-w-6xl lg:px-8">
+          <h2 className="text-2xl font-bold sm:text-3xl">How it works</h2>
+          <div className="mt-10 grid gap-8 sm:grid-cols-3">
+            {[
+              {
+                step: "1",
+                title: "Call to book",
+                text: "Give us a ring and we'll find a time that suits you. First lesson available within days.",
+              },
+              {
+                step: "2",
+                title: "Learn at your pace",
+                text: "Patient, structured lessons tailored to you. We pick you up from home, work, or university.",
+              },
+              {
+                step: "3",
+                title: "Pass your test",
+                text: "Thorough test preparation on real Leicester routes. Many students pass first time.",
+              },
+            ].map((item) => (
+              <div key={item.step}>
+                <span className="text-4xl font-bold text-primary/20">
+                  {item.step}
+                </span>
+                <h3 className="mt-2 text-lg font-semibold">{item.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  {item.text}
                 </p>
-                <p className="mt-2 text-4xl font-bold">&pound;30</p>
-                <p className="mt-1 text-sm text-muted-foreground">per hour</p>
-                <p className="mt-4 text-xs text-muted-foreground">
-                  Standard lesson in Leicester
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="relative border-accent text-center shadow-lg">
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-accent px-3 py-0.5 text-xs font-semibold text-accent-foreground">
-                Most Popular
               </div>
-              <CardContent className="p-8">
-                <p className="text-sm font-medium text-muted-foreground">
-                  10 Hour Block
-                </p>
-                <p className="mt-2 text-4xl font-bold">&pound;290</p>
-                <p className="mt-1 text-sm text-muted-foreground">
-                  &pound;29/hour
-                </p>
-                <p className="mt-4 text-xs text-muted-foreground">
-                  Save &pound;10 vs single lessons
-                </p>
-              </CardContent>
-            </Card>
-            <Card className="text-center">
-              <CardContent className="p-8">
-                <p className="text-sm font-medium text-muted-foreground">
-                  20 Hour Block
-                </p>
-                <p className="mt-2 text-4xl font-bold">&pound;560</p>
-                <p className="mt-1 text-sm text-muted-foreground">
-                  &pound;28/hour
-                </p>
-                <p className="mt-4 text-xs text-muted-foreground">
-                  Best value &middot; Save &pound;40
-                </p>
-              </CardContent>
-            </Card>
+            ))}
           </div>
-          <div className="mt-8 text-center">
-            <Link href="/pricing">
-              <Button variant="outline" size="lg">
-                View All Prices
-              </Button>
+        </div>
+      </section>
+
+      {/* About / quote split */}
+      <section className="border-y bg-white px-4 py-16 sm:py-24">
+        <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2 lg:px-8">
+          <div>
+            <h2 className="text-2xl font-bold sm:text-3xl">
+              Learn from someone who cares
+            </h2>
+            <div className="mt-6 space-y-4 text-muted-foreground">
+              <p>
+                Nawab is a DVSA approved instructor who&apos;s helped dozens of
+                learners pass their test in Leicester. His approach is simple:
+                be patient, be thorough, and make sure every student feels
+                confident before test day.
+              </p>
+              <p>
+                Lessons are structured around the real test routes from the
+                Cannock Street test centre. You&apos;ll practise the actual roads,
+                roundabouts, and junctions you&apos;ll face on the day.
+              </p>
+              <p>
+                Whether you&apos;re a complete beginner or need a refresher,
+                the lessons adapt to you — not the other way around.
+              </p>
+            </div>
+          </div>
+          <div className="flex flex-col justify-center">
+            <blockquote className="border-l-4 border-primary pl-6">
+              <p className="text-xl italic leading-relaxed text-foreground/80 sm:text-2xl">
+                &ldquo;Incredibly patient, calm, professional. Clear
+                explanations and encouragement throughout. Passed first
+                attempt.&rdquo;
+              </p>
+              <footer className="mt-4">
+                <p className="font-semibold">Vajidali Saiyed</p>
+                <p className="text-sm text-primary">Passed first attempt</p>
+              </footer>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing snapshot — clean typography, no card borders */}
+      <section className="px-4 py-16 sm:py-24">
+        <div className="mx-auto max-w-6xl lg:px-8">
+          <h2 className="text-2xl font-bold sm:text-3xl">Lesson prices</h2>
+          <p className="mt-2 text-muted-foreground">
+            No hidden fees. No extra charge for evenings or weekends.
+          </p>
+          <div className="mt-10 grid gap-6 sm:grid-cols-3">
+            <div className="rounded-lg border bg-white p-6">
+              <p className="text-sm text-muted-foreground">Single Lesson</p>
+              <p className="mt-1 text-3xl font-bold">&pound;30<span className="text-base font-normal text-muted-foreground">/hr</span></p>
+              <p className="mt-3 text-sm text-muted-foreground">
+                Standard lesson in Leicester. Pay as you go.
+              </p>
+            </div>
+            <div className="rounded-lg bg-primary/5 p-6 ring-1 ring-primary/20">
+              <p className="text-sm font-medium text-primary">Most popular</p>
+              <p className="mt-1 text-3xl font-bold">&pound;290</p>
+              <p className="mt-1 text-sm text-muted-foreground">
+                10 hours &middot; &pound;29/hr
+              </p>
+              <p className="mt-3 text-sm text-muted-foreground">
+                Save &pound;10 compared to single lessons.
+              </p>
+            </div>
+            <div className="rounded-lg border bg-white p-6">
+              <p className="text-sm text-muted-foreground">20 Hour Block</p>
+              <p className="mt-1 text-3xl font-bold">&pound;560</p>
+              <p className="mt-1 text-sm text-muted-foreground">
+                &pound;28/hr &middot; Best value
+              </p>
+              <p className="mt-3 text-sm text-muted-foreground">
+                Save &pound;40. Ideal for beginners.
+              </p>
+            </div>
+          </div>
+          <div className="mt-6">
+            <Link
+              href="/pricing"
+              className="text-sm font-medium text-primary underline underline-offset-4 hover:text-primary/80"
+            >
+              Student rates, Pass Plus, and test day hire &rarr;
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Featured Testimonials */}
-      <section className="px-4 py-16 sm:py-24">
-        <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold tracking-tight">
-              What Students Say
+      {/* Testimonial strip — just quotes, no stars, no cards */}
+      <section className="border-y bg-white px-4 py-16 sm:py-24">
+        <div className="mx-auto max-w-6xl lg:px-8">
+          <div className="flex items-baseline justify-between">
+            <h2 className="text-2xl font-bold sm:text-3xl">
+              From our students
             </h2>
-            <p className="mt-3 text-muted-foreground">
-              38+ students have shared their experience
-            </p>
-          </div>
-          <div className="mt-12 grid gap-6 sm:grid-cols-3">
-            {featuredTestimonials.map((t) => (
-              <Card key={t.name}>
-                <CardContent className="p-6">
-                  <div className="flex gap-1 text-accent">
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <Star
-                        key={i}
-                        className="h-4 w-4 fill-current"
-                      />
-                    ))}
-                  </div>
-                  <blockquote className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                    &ldquo;{t.quote}&rdquo;
-                  </blockquote>
-                  <div className="mt-4 border-t pt-4">
-                    <p className="font-semibold">{t.name}</p>
-                    {t.result && (
-                      <p className="text-sm text-accent">{t.result}</p>
-                    )}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-          <div className="mt-8 text-center">
-            <Link href="/testimonials">
-              <Button variant="outline" size="lg">
-                Read All Reviews
-              </Button>
+            <Link
+              href="/testimonials"
+              className="text-sm text-primary underline underline-offset-4 hover:text-primary/80"
+            >
+              All 38 reviews &rarr;
             </Link>
+          </div>
+          <div className="mt-10 grid gap-8 sm:grid-cols-3">
+            {featuredReviews.map((t) => (
+              <div key={t.name}>
+                <p className="leading-relaxed text-foreground/80">
+                  &ldquo;{t.quote}&rdquo;
+                </p>
+                <p className="mt-3 text-sm font-semibold">{t.name}</p>
+                {t.result && (
+                  <p className="text-sm text-primary">{t.result}</p>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </section>

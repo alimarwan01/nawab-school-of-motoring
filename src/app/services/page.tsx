@@ -1,20 +1,6 @@
 import type { Metadata } from "next";
-import {
-  Car,
-  Zap,
-  RefreshCw,
-  BookOpen,
-  Route,
-  Award,
-  CreditCard,
-  DoorOpen,
-  Thermometer,
-  Clock,
-} from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
 import { CTABanner } from "@/components/cta-banner";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -24,63 +10,34 @@ export const metadata: Metadata = {
 
 const services = [
   {
-    icon: Car,
     title: "Beginner Lessons",
     description:
-      "Starting from scratch? Our structured beginner programme takes you from your very first time behind the wheel through to test-ready confidence. Patient, step-by-step instruction tailored to your pace.",
+      "Starting from scratch? Structured lessons take you from your very first time behind the wheel through to test-ready confidence, at your own pace.",
   },
   {
-    icon: Zap,
     title: "Intensive Courses",
     description:
-      "Need to pass quickly? Our intensive driving courses condense your learning into a focused block of lessons. Ideal if you already have some experience or need your licence fast.",
+      "Need your licence fast? Concentrated blocks of lessons to get you test-ready in weeks, not months. Ideal if you have some experience already.",
   },
   {
-    icon: RefreshCw,
     title: "Refresher Training",
     description:
-      "Already have your licence but feeling rusty? Our refresher courses help you rebuild confidence on the road. Perfect after a long break from driving.",
+      "Already passed but haven't driven in a while? Rebuild your confidence with refresher sessions tailored to where you need the most practice.",
   },
   {
-    icon: BookOpen,
-    title: "Theory Test Preparation",
+    title: "Theory Test Support",
     description:
-      "We provide guidance and support with your theory test preparation, including hazard perception practice. Be fully prepared before booking your practical test.",
+      "Guidance and tips for your theory test and hazard perception. We make sure you're ready for both parts before booking your practical.",
   },
   {
-    icon: Route,
     title: "Motorway Instruction",
     description:
-      "Learn to drive safely at higher speeds with professional motorway tuition. Build confidence for dual carriageway and motorway driving with expert guidance.",
+      "Professional tuition for dual carriageway and motorway driving. Build confidence at higher speeds with an experienced instructor beside you.",
   },
   {
-    icon: Award,
     title: "Pass Plus",
     description:
-      "The Pass Plus scheme helps newly qualified drivers gain experience in conditions not covered in the standard test. This can also reduce your insurance premiums. Minimum 6 hours.",
-  },
-];
-
-const features = [
-  {
-    icon: CreditCard,
-    title: "Block Booking Discounts",
-    description: "Save money when you book 5, 10 or 20 hours in advance. Student rates also available.",
-  },
-  {
-    icon: DoorOpen,
-    title: "Door-to-Door Service",
-    description: "Collected from your home, work, or university and dropped back afterwards. No need to travel to us.",
-  },
-  {
-    icon: Thermometer,
-    title: "Air-Conditioned Car",
-    description: "Learn in comfort with a modern, dual-controlled, fully air-conditioned vehicle.",
-  },
-  {
-    icon: Clock,
-    title: "No Extra Cost for Evenings & Weekends",
-    description: "The same competitive rate whether you book a Monday morning or Saturday evening lesson.",
+      "Six hours of advanced training covering conditions not in the standard test — night driving, motorways, and more. Can reduce your insurance premiums.",
   },
 ];
 
@@ -88,58 +45,79 @@ export default function ServicesPage() {
   return (
     <>
       <section className="bg-primary px-4 py-16 text-primary-foreground sm:py-20">
-        <div className="mx-auto max-w-3xl text-center">
-          <h1 className="text-3xl font-bold sm:text-4xl">Our Services</h1>
-          <p className="mt-4 text-lg text-primary-foreground/80">
-            Comprehensive driving instruction for every level of experience.
-            Male and female instructors available.
+        <div className="mx-auto max-w-6xl lg:px-8">
+          <h1 className="text-3xl font-bold sm:text-4xl">Services</h1>
+          <p className="mt-3 max-w-xl text-primary-foreground/70">
+            Everything from your very first lesson to advanced post-test
+            training. Male and female instructors available.
           </p>
         </div>
       </section>
 
       <section className="px-4 py-16 sm:py-24">
-        <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto max-w-6xl lg:px-8">
+          <div className="divide-y">
             {services.map((service) => (
-              <Card key={service.title} className="border-0 bg-secondary/50 transition-colors hover:bg-secondary">
-                <CardContent className="p-6">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10">
-                    <service.icon className="h-6 w-6 text-accent" />
-                  </div>
-                  <h2 className="mt-4 text-lg font-semibold">{service.title}</h2>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                    {service.description}
-                  </p>
-                </CardContent>
-              </Card>
+              <div
+                key={service.title}
+                className="grid gap-2 py-8 first:pt-0 last:pb-0 sm:grid-cols-3 sm:gap-8"
+              >
+                <h2 className="text-lg font-semibold">{service.title}</h2>
+                <p className="text-muted-foreground sm:col-span-2">
+                  {service.description}
+                </p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="border-y bg-white px-4 py-16 sm:py-24">
-        <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <h2 className="text-center text-3xl font-bold tracking-tight">
-            Why Learn With Us
-          </h2>
-          <div className="mt-12 grid gap-8 sm:grid-cols-2">
-            {features.map((feature) => (
-              <div key={feature.title} className="flex gap-4">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent/10">
-                  <feature.icon className="h-5 w-5 text-accent" />
-                </div>
-                <div>
-                  <h3 className="font-semibold">{feature.title}</h3>
-                  <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-                    {feature.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="mt-10 text-center">
-            <Link href="/pricing">
-              <Button size="lg">View Pricing</Button>
+      <section className="border-t bg-white px-4 py-16 sm:py-24">
+        <div className="mx-auto max-w-6xl lg:px-8">
+          <h2 className="text-2xl font-bold">What&apos;s included</h2>
+          <ul className="mt-6 space-y-3 text-muted-foreground">
+            <li className="flex gap-3">
+              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+              <span>
+                <strong className="text-foreground">Door-to-door service</strong>{" "}
+                — picked up from home, work, or university and dropped back
+                afterwards
+              </span>
+            </li>
+            <li className="flex gap-3">
+              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+              <span>
+                <strong className="text-foreground">
+                  Modern, air-conditioned car
+                </strong>{" "}
+                — dual-controlled for your safety and comfort
+              </span>
+            </li>
+            <li className="flex gap-3">
+              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+              <span>
+                <strong className="text-foreground">
+                  No extra charge for evenings &amp; weekends
+                </strong>{" "}
+                — same rate, whenever suits you
+              </span>
+            </li>
+            <li className="flex gap-3">
+              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+              <span>
+                <strong className="text-foreground">
+                  Block booking discounts
+                </strong>{" "}
+                — save when you book 5, 10, or 20 hours in advance
+              </span>
+            </li>
+          </ul>
+          <div className="mt-8">
+            <Link
+              href="/pricing"
+              className="text-sm font-medium text-primary underline underline-offset-4 hover:text-primary/80"
+            >
+              See all prices &rarr;
             </Link>
           </div>
         </div>
