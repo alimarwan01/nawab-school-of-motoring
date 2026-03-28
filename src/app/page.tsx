@@ -53,25 +53,23 @@ export default function HomePage() {
           </div>
 
           {/* Hero photo — real student celebrating */}
-          <AnimateIn from="right" delay={300} duration={800}>
-            <div className="relative mx-auto max-w-sm lg:max-w-none">
-              <div className="overflow-hidden rounded-2xl shadow-2xl shadow-black/30">
-                <Image
-                  src="/students/raya-saleh-ali-juma.jpeg"
-                  alt="Student celebrating after passing their driving test"
-                  width={500}
-                  height={600}
-                  className="aspect-[4/5] w-full object-cover"
-                  priority
-                />
-              </div>
-              {/* Floating result tag */}
-              <div className="absolute -bottom-3 -left-3 rounded-lg bg-white px-4 py-2 shadow-lg sm:-bottom-4 sm:-left-4">
-                <p className="text-xs font-medium text-muted-foreground">Latest result</p>
-                <p className="text-sm font-bold text-primary">Passed first time</p>
-              </div>
+          <div className="relative mx-auto max-w-sm animate-[hero-photo_0.8s_ease-out_0.3s_both] lg:max-w-none">
+            <div className="overflow-hidden rounded-2xl shadow-2xl shadow-black/30">
+              <Image
+                src="/students/raya-saleh-ali-juma.jpeg"
+                alt="Student celebrating after passing their driving test"
+                width={500}
+                height={600}
+                className="aspect-[4/5] w-full object-cover"
+                priority
+              />
             </div>
-          </AnimateIn>
+            {/* Floating result tag */}
+            <div className="absolute -bottom-3 -left-3 animate-[hero-photo_0.5s_ease-out_0.8s_both] rounded-lg bg-white px-4 py-2 shadow-lg sm:-bottom-4 sm:-left-4">
+              <p className="text-xs font-medium text-muted-foreground">Latest result</p>
+              <p className="text-sm font-bold text-primary">Passed first time</p>
+            </div>
+          </div>
         </div>
       </section>
 
