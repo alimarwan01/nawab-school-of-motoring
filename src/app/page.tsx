@@ -14,9 +14,8 @@ export default function HomePage() {
   return (
     <>
       {/* Hero — split layout with student photo */}
-      <section className="bg-primary px-4 py-16 text-primary-foreground sm:py-24">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-2 lg:px-8">
-          <div>
+      <section className="bg-primary px-4 py-20 text-primary-foreground sm:py-28">
+        <div className="mx-auto max-w-6xl lg:px-8">
             <AnimateIn from="none" delay={0} duration={500}>
               <p className="text-sm font-medium tracking-wide text-primary-foreground/60 uppercase">
                 DVSA Approved Instructor &middot; Leicester &amp; Luton
@@ -50,26 +49,6 @@ export default function HomePage() {
                 </Link>
               </div>
             </AnimateIn>
-          </div>
-
-          {/* Hero photo — real student celebrating */}
-          <div className="relative mx-auto max-w-sm animate-[hero-photo_0.8s_ease-out_0.3s_both] lg:max-w-none">
-            <div className="overflow-hidden rounded-2xl shadow-2xl shadow-black/30">
-              <Image
-                src="/students/raya-saleh-ali-juma.jpeg"
-                alt="Student celebrating after passing their driving test"
-                width={500}
-                height={600}
-                className="aspect-[4/5] w-full object-cover"
-                priority
-              />
-            </div>
-            {/* Floating result tag */}
-            <div className="absolute -bottom-3 -left-3 animate-[hero-photo_0.5s_ease-out_0.8s_both] rounded-lg bg-white px-4 py-2 shadow-lg sm:-bottom-4 sm:-left-4">
-              <p className="text-xs font-medium text-muted-foreground">Latest result</p>
-              <p className="text-sm font-bold text-primary">Passed first time</p>
-            </div>
-          </div>
         </div>
       </section>
 
