@@ -21,7 +21,7 @@ export function Footer() {
             </p>
             <p className="mt-1 text-sm text-muted-foreground">
               Friendly, patient &amp; professional driving instruction in
-              Leicester &amp; Luton.
+              Leicester.
             </p>
             <p className="mt-3 text-sm text-muted-foreground">
               201 Sandhills Avenue, Hamilton, Leicester LE5 1QL

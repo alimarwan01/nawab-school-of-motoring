@@ -5,7 +5,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Driving lesson services in Leicester & Luton. Beginner lessons, intensive courses, refresher training, theory test prep, motorway tuition, and Pass Plus.",
+    "Driving lesson services in Leicester. Beginner lessons, intensive courses, refresher training, theory test prep, motorway tuition, and Pass Plus.",
 };
 
 const services = [

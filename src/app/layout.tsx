@@ -16,21 +16,20 @@ export const metadata: Metadata = {
     template: "%s | Nawab School of Motoring",
   },
   description:
-    "DVSA approved driving lessons in Leicester & Luton. Friendly, patient, professional instruction. High first-time pass rate. Lessons from \u00a328/hr. Call 07977 589 345.",
+    "DVSA approved driving lessons in Leicester. Friendly, patient, professional instruction. High first-time pass rate. Lessons from \u00a328/hr. Call 07977 589 345.",
   keywords: [
     "driving lessons Leicester",
     "driving instructor Leicester",
     "learn to drive Leicester",
     "DVSA approved instructor",
     "Pass Plus Leicester",
-    "driving school Luton",
     "automatic driving lessons",
     "intensive driving course Leicester",
   ],
   openGraph: {
     title: "Nawab School of Motoring | Driving Lessons in Leicester",
     description:
-      "DVSA approved driving lessons in Leicester & Luton. Friendly, patient, professional instruction. High first-time pass rate.",
+      "DVSA approved driving lessons in Leicester. Friendly, patient, professional instruction. High first-time pass rate.",
     type: "website",
     locale: "en_GB",
     siteName: "Nawab School of Motoring",

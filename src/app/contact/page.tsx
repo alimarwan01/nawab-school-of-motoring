@@ -6,7 +6,7 @@ import { FacebookIcon, TwitterIcon } from "@/components/icons";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get in touch with Nawab School of Motoring. Call 07977 589 345 or send us a message. Based in Leicester, serving Leicester & Luton.",
+    "Get in touch with Nawab School of Motoring. Call 07977 589 345 or send us a message. Based in Leicester, Based in Leicester.",
 };
 
 export default function ContactPage() {
@@ -46,7 +46,7 @@ export default function ContactPage() {
               </div>
               <div>
                 <p className="font-semibold text-foreground">Areas covered</p>
-                <p className="text-muted-foreground">Leicester &amp; Luton</p>
+                <p className="text-muted-foreground">Leicester</p>
               </div>
               <div>
                 <p className="font-semibold text-foreground">Credentials</p>

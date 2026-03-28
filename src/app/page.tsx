@@ -19,7 +19,7 @@ export default function HomePage() {
           <div>
             <AnimateIn from="none" delay={0} duration={500}>
               <p className="text-sm font-medium tracking-wide text-primary-foreground/60 uppercase">
-                DVSA Approved Instructor &middot; Leicester &amp; Luton
+                DVSA Approved Instructor &middot; Leicester
               </p>
             </AnimateIn>
             <AnimateIn from="left" delay={150} duration={700}>
