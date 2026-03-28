@@ -2,6 +2,8 @@ import { Phone } from "lucide-react";
 import Image from "next/image";
 import { CTABanner } from "@/components/cta-banner";
 import { AnimateIn } from "@/components/animate-in";
+import { WallOfPasses } from "@/components/wall-of-passes";
+import { GoogleRating } from "@/components/google-rating";
 import { StatsStrip } from "./stats-strip";
 import { testimonials } from "@/data/testimonials";
 import Link from "next/link";
@@ -11,51 +13,78 @@ const featuredReviews = testimonials.filter((t) => t.result && t.photo).slice(0,
 export default function HomePage() {
   return (
     <>
-      {/* Hero — staggered entrance */}
-      <section className="bg-primary px-4 py-20 text-primary-foreground sm:py-28">
-        <div className="mx-auto max-w-6xl lg:px-8">
-          <AnimateIn from="none" delay={0} duration={500}>
-            <p className="text-sm font-medium tracking-wide text-primary-foreground/60 uppercase">
-              DVSA Approved Instructor &middot; Leicester &amp; Luton
-            </p>
-          </AnimateIn>
-          <AnimateIn from="left" delay={150} duration={700}>
-            <h1 className="mt-4 max-w-2xl text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
-              Driving Lessons in Leicester
-            </h1>
-          </AnimateIn>
-          <AnimateIn from="left" delay={300} duration={700}>
-            <p className="mt-4 max-w-xl text-lg text-primary-foreground/70">
-              Patient, friendly instruction that gets you on the road. High
-              first-time pass rate with lessons from &pound;28/hr.
-            </p>
-          </AnimateIn>
-          <AnimateIn from="up" delay={500} duration={600}>
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
-              <a
-                href="tel:07977589345"
-                className="group inline-flex items-center gap-2 rounded-md bg-accent px-6 py-3 text-base font-medium text-accent-foreground transition-all duration-200 hover:bg-accent/90 hover:shadow-lg hover:shadow-accent/25 hover:-translate-y-0.5"
-              >
-                <Phone className="h-4 w-4 transition-transform duration-200 group-hover:scale-110" />
-                07977 589 345
-              </a>
-              <Link
-                href="/pricing"
-                className="text-sm text-primary-foreground/60 underline underline-offset-4 transition-colors hover:text-primary-foreground"
-              >
-                View all prices
-              </Link>
+      {/* Hero — split layout with student photo */}
+      <section className="bg-primary px-4 py-16 text-primary-foreground sm:py-24">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-2 lg:px-8">
+          <div>
+            <AnimateIn from="none" delay={0} duration={500}>
+              <p className="text-sm font-medium tracking-wide text-primary-foreground/60 uppercase">
+                DVSA Approved Instructor &middot; Leicester &amp; Luton
+              </p>
+            </AnimateIn>
+            <AnimateIn from="left" delay={150} duration={700}>
+              <h1 className="mt-4 text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
+                Driving Lessons in Leicester
+              </h1>
+            </AnimateIn>
+            <AnimateIn from="left" delay={300} duration={700}>
+              <p className="mt-4 max-w-xl text-lg text-primary-foreground/70">
+                Patient, friendly instruction that gets you on the road. High
+                first-time pass rate with lessons from &pound;28/hr.
+              </p>
+            </AnimateIn>
+            <AnimateIn from="up" delay={500} duration={600}>
+              <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
+                <a
+                  href="tel:07977589345"
+                  className="group inline-flex items-center gap-2 rounded-md bg-accent px-6 py-3 text-base font-medium text-accent-foreground transition-all duration-200 hover:bg-accent/90 hover:shadow-lg hover:shadow-accent/25 hover:-translate-y-0.5"
+                >
+                  <Phone className="h-4 w-4 transition-transform duration-200 group-hover:scale-110" />
+                  07977 589 345
+                </a>
+                <Link
+                  href="/pricing"
+                  className="text-sm text-primary-foreground/60 underline underline-offset-4 transition-colors hover:text-primary-foreground"
+                >
+                  View all prices
+                </Link>
+              </div>
+            </AnimateIn>
+          </div>
+
+          {/* Hero photo — real student celebrating */}
+          <AnimateIn from="right" delay={300} duration={800}>
+            <div className="relative mx-auto max-w-sm lg:max-w-none">
+              <div className="overflow-hidden rounded-2xl shadow-2xl shadow-black/30">
+                <Image
+                  src="/students/raya-saleh-ali-juma.jpeg"
+                  alt="Student celebrating after passing their driving test"
+                  width={500}
+                  height={600}
+                  className="aspect-[4/5] w-full object-cover"
+                  priority
+                />
+              </div>
+              {/* Floating result tag */}
+              <div className="absolute -bottom-3 -left-3 rounded-lg bg-white px-4 py-2 shadow-lg sm:-bottom-4 sm:-left-4">
+                <p className="text-xs font-medium text-muted-foreground">Latest result</p>
+                <p className="text-sm font-bold text-primary">Passed first time</p>
+              </div>
             </div>
           </AnimateIn>
         </div>
       </section>
 
-      {/* Stats strip — count-up numbers */}
+      {/* Stats strip */}
       <StatsStrip />
 
-      {/* How it works */}
+      {/* Google rating + How it works */}
       <section className="px-4 py-16 sm:py-24">
         <div className="mx-auto max-w-6xl lg:px-8">
+          <div className="mb-16">
+            <GoogleRating />
+          </div>
+
           <AnimateIn>
             <h2 className="text-2xl font-bold sm:text-3xl">How it works</h2>
           </AnimateIn>
@@ -93,7 +122,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* About / quote split */}
+      {/* About / quote split with credential badges */}
       <section className="border-y bg-white px-4 py-16 sm:py-24">
         <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2 lg:px-8">
           <AnimateIn from="left">
@@ -118,15 +147,32 @@ export default function HomePage() {
                   the lessons adapt to you — not the other way around.
                 </p>
               </div>
+              {/* Credential badges */}
+              <div className="mt-8 flex items-center gap-4">
+                <Image
+                  src="/dsa-badge.jpg"
+                  alt="DVSA Approved Driving Instructor badge"
+                  width={60}
+                  height={60}
+                  className="h-14 w-14 rounded object-contain sm:h-16 sm:w-16"
+                />
+                <Image
+                  src="/pass-plus.jpg"
+                  alt="Pass Plus Certified logo"
+                  width={80}
+                  height={40}
+                  className="h-10 object-contain sm:h-12"
+                />
+              </div>
             </div>
           </AnimateIn>
           <AnimateIn from="right" delay={200}>
             <div className="flex flex-col justify-center">
               <blockquote className="border-l-4 border-primary pl-6">
                 <p className="text-xl italic leading-relaxed text-foreground/80 sm:text-2xl">
-                  &ldquo;Incredibly patient, calm, professional. Clear
-                  explanations and encouragement throughout. Passed first
-                  attempt.&rdquo;
+                  &ldquo;PASS AT FIRST ATTEMPT. Alhamdulillah, I&apos;m so
+                  grateful to have learned car with Irfan Bhai at Nawab Driving
+                  School.&rdquo;
                 </p>
                 <footer className="mt-4">
                   <p className="font-semibold">Vajidali Saiyed</p>
@@ -138,8 +184,11 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Wall of passes */}
+      <WallOfPasses />
+
       {/* Pricing snapshot */}
-      <section className="px-4 py-16 sm:py-24">
+      <section className="border-t px-4 py-16 sm:py-24">
         <div className="mx-auto max-w-6xl lg:px-8">
           <AnimateIn>
             <h2 className="text-2xl font-bold sm:text-3xl">Lesson prices</h2>
@@ -198,7 +247,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Testimonial strip */}
+      {/* Testimonial strip — large photos */}
       <section className="border-y bg-white px-4 py-16 sm:py-24">
         <div className="mx-auto max-w-6xl lg:px-8">
           <AnimateIn>
@@ -217,24 +266,26 @@ export default function HomePage() {
           <div className="mt-10 grid gap-8 sm:grid-cols-3">
             {featuredReviews.map((t, i) => (
               <AnimateIn key={t.name} from="up" delay={i * 150}>
-                <div className="flex gap-4">
+                <div className="overflow-hidden rounded-lg border bg-white">
                   {t.photo && (
                     <Image
                       src={t.photo}
                       alt={`${t.name} after passing their driving test`}
-                      width={48}
-                      height={48}
-                      className="h-12 w-12 shrink-0 rounded-full object-cover"
+                      width={400}
+                      height={300}
+                      className="aspect-[4/3] w-full object-cover"
                     />
                   )}
-                  <div>
-                    <p className="leading-relaxed text-foreground/80">
+                  <div className="p-5">
+                    <p className="text-sm leading-relaxed text-foreground/80">
                       &ldquo;{t.quote}&rdquo;
                     </p>
-                    <p className="mt-3 text-sm font-semibold">{t.name}</p>
-                    {t.result && (
-                      <p className="text-sm text-primary">{t.result}</p>
-                    )}
+                    <div className="mt-3 border-t pt-3">
+                      <p className="text-sm font-semibold">{t.name}</p>
+                      {t.result && (
+                        <p className="text-xs text-primary">{t.result}</p>
+                      )}
+                    </div>
                   </div>
                 </div>
               </AnimateIn>

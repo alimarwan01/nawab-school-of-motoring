@@ -34,32 +34,35 @@ export default function TestimonialsPage() {
           {testimonials.map((t, i) => (
             <div
               key={`${t.name}-${i}`}
-              className="mb-5 break-inside-avoid rounded-lg border bg-white p-5"
+              className="mb-5 break-inside-avoid overflow-hidden rounded-lg border bg-white"
             >
-              <div className="flex items-start gap-3">
-                {t.photo ? (
-                  <Image
-                    src={t.photo}
-                    alt={`${t.name} after passing their driving test`}
-                    width={44}
-                    height={44}
-                    className="h-11 w-11 rounded-full object-cover"
-                  />
-                ) : (
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-primary/10 text-sm font-semibold text-primary">
-                    {t.name.charAt(0)}
-                  </div>
-                )}
-                <div className="min-w-0">
-                  <p className="text-sm font-semibold">{t.name}</p>
-                  {t.result && (
-                    <p className="text-xs text-primary">{t.result}</p>
+              {t.photo && (
+                <Image
+                  src={t.photo}
+                  alt={`${t.name} after passing their driving test`}
+                  width={400}
+                  height={300}
+                  className="aspect-[4/3] w-full object-cover"
+                />
+              )}
+              <div className="p-5">
+                <div className="flex items-start gap-3">
+                  {!t.photo && (
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-sm font-semibold text-primary">
+                      {t.name.charAt(0)}
+                    </div>
                   )}
+                  <div className="min-w-0">
+                    <p className="text-sm font-semibold">{t.name}</p>
+                    {t.result && (
+                      <p className="text-xs text-primary">{t.result}</p>
+                    )}
+                  </div>
                 </div>
+                <p className="mt-3 text-sm leading-relaxed text-foreground/80">
+                  &ldquo;{t.quote}&rdquo;
+                </p>
               </div>
-              <p className="mt-3 text-sm leading-relaxed text-foreground/80">
-                &ldquo;{t.quote}&rdquo;
-              </p>
             </div>
           ))}
         </div>
