@@ -2,6 +2,7 @@
 
 import { AnimateIn } from "@/components/animate-in";
 import { CountUp } from "@/components/count-up";
+import { GoogleIcon, FreeIndexIcon } from "@/components/icons";
 
 function Star() {
   return (
@@ -36,16 +37,18 @@ export function GoogleRating() {
             href="https://www.google.com/maps/place/Nawab+School+Of+Motoring/@52.6569,-1.0728,17z/data=!4m8!3m7!1s0x4877613682d1a7e9:0x7a2e5be5cc0c8e0!8m2!3d52.6569!4d-1.0728!9m1!1b1!16s%2Fg%2F11c5r7_9zz"
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
+            <GoogleIcon className="h-4 w-4" />
             Google Reviews
           </a>
           <a
             href="https://www.freeindex.co.uk/profile(nawab-school-of-motoring)_536371.htm"
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-md border px-4 py-2 text-sm font-medium transition-colors hover:bg-secondary"
+            className="inline-flex items-center gap-2 rounded-md border px-4 py-2 text-sm font-medium transition-colors hover:bg-secondary"
           >
+            <FreeIndexIcon className="h-4 w-4" />
             FreeIndex Reviews
           </a>
         </div>
