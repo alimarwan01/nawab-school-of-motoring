@@ -59,14 +59,14 @@ export default function ServicesPage() {
 
       <section className="px-4 py-16 sm:py-24">
         <div className="mx-auto max-w-6xl lg:px-8">
-          <div className="divide-y">
+          <div className="space-y-12">
             {services.map((service, i) => (
               <AnimateIn
                 key={service.title}
                 from={i % 2 === 0 ? "left" : "right"}
                 delay={i * 80}
               >
-                <div className="grid gap-2 py-10 first:pt-0 last:pb-0 sm:grid-cols-3 sm:gap-12">
+                <div className="grid gap-3 sm:grid-cols-3 sm:gap-12">
                   <h2 className="text-lg font-semibold">{service.title}</h2>
                   <p className="text-muted-foreground sm:col-span-2">
                     {service.description}
