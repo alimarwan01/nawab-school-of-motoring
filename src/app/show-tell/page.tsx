@@ -66,10 +66,11 @@ export default function ShowTellPage() {
             Show Me / Tell Me Questions
           </h1>
           <p className="mt-3 text-primary-foreground/70">
-            These are the DVSA questions for the practical driving test as of
-            March 2026. You&apos;ll be asked 1 &ldquo;tell me&rdquo; question
-            before you drive and 1 &ldquo;show me&rdquo; question while driving.
-            Tap each question to test yourself.
+            These are the DVSA questions for the practical driving test, last
+            updated by GOV.UK in December 2017. You&apos;ll be asked
+            1 &ldquo;tell me&rdquo; question before you drive and
+            1 &ldquo;show me&rdquo; question while driving. Tap each question
+            to test yourself.
           </p>
           <p className="mt-4">
             <a
