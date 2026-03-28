@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { CTABanner } from "@/components/cta-banner";
 import { AnimateIn } from "@/components/animate-in";
+import { GoogleIcon, FreeIndexIcon } from "@/components/icons";
 import { testimonials } from "@/data/testimonials";
 
 export const metadata: Metadata = {
@@ -23,10 +24,28 @@ export default function TestimonialsPage() {
               {testimonials.length} verified reviews from Google, FreeIndex, and
               our students. {passCount} confirmed passes.
             </p>
-            <div className="mt-4 flex gap-4 text-sm text-primary-foreground/50">
-              <span>5.0/5 on Google (199 reviews)</span>
-              <span>&middot;</span>
-              <span>5.0/5 on FreeIndex (457 reviews)</span>
+            <p className="mt-4 text-sm text-primary-foreground/50">
+              5.0/5 on Google (199 reviews) &middot; 5.0/5 on FreeIndex (457 reviews)
+            </p>
+            <div className="mt-4 flex gap-2">
+              <a
+                href="https://www.google.com/maps/place/Nawab+School+Of+Motoring/@52.6569,-1.0728,17z/data=!4m8!3m7!1s0x4877613682d1a7e9:0x7a2e5be5cc0c8e0!8m2!3d52.6569!4d-1.0728!9m1!1b1!16s%2Fg%2F11c5r7_9zz"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-md bg-primary-foreground px-4 py-2 text-sm font-medium text-primary transition-colors hover:bg-primary-foreground/90"
+              >
+                <GoogleIcon className="h-4 w-4" />
+                Google Reviews
+              </a>
+              <a
+                href="https://www.freeindex.co.uk/profile(nawab-school-of-motoring)_536371.htm"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-md border border-primary-foreground/30 px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary-foreground/10"
+              >
+                <FreeIndexIcon className="h-4 w-4" />
+                FreeIndex Reviews
+              </a>
             </div>
           </AnimateIn>
         </div>
