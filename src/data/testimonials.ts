@@ -12,7 +12,7 @@ import { business } from "@/lib/constants";
 
 const GOOGLE_URL = business.social.google;
 const FREEINDEX_URL = business.social.freeindex;
-const WEBSITE_URL = `${business.website}/0/testimonials.htm`;
+const WEBSITE_URL = GOOGLE_URL; // Website reviews can't be verified externally, link to Google instead
 
 export const testimonials: Testimonial[] = [
   // FreeIndex reviews (with dates, most recent first)
