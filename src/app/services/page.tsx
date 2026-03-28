@@ -66,9 +66,9 @@ export default function ServicesPage() {
                 from={i % 2 === 0 ? "left" : "right"}
                 delay={i * 80}
               >
-                <div className="grid gap-3 sm:grid-cols-3 sm:gap-12">
+                <div className="grid gap-3 sm:grid-cols-[250px_1fr] sm:gap-16">
                   <h2 className="text-lg font-semibold">{service.title}</h2>
-                  <p className="text-muted-foreground sm:col-span-2">
+                  <p className="leading-relaxed text-muted-foreground">
                     {service.description}
                   </p>
                 </div>
