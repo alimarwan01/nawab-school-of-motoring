@@ -5,10 +5,7 @@ import { AnimateIn } from "@/components/animate-in";
 import { WallOfPasses } from "@/components/wall-of-passes";
 import { GoogleRating } from "@/components/google-rating";
 import { StatsStrip } from "./stats-strip";
-import { testimonials } from "@/data/testimonials";
 import Link from "next/link";
-
-const featuredReviews = testimonials.filter((t) => t.result && t.photo).slice(0, 3);
 
 export default function HomePage() {
   return (

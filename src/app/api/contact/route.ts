@@ -11,17 +11,7 @@ const contactSchema = z.object({
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const data = contactSchema.parse(body);
-
-    // For now, log the submission. Once Supabase is connected,
-    // this will insert into a contact_submissions table.
-    // In production, this could also send an email notification.
-    const timestamp = new Date().toISOString();
-    const submission = { ...data, timestamp };
-
-    // Placeholder: when Supabase is set up, uncomment:
-    // const supabase = createClient();
-    // await supabase.from('contact_submissions').insert(submission);
+    contactSchema.parse(body);
 
     return NextResponse.json(
       { success: true, message: "Message received" },
