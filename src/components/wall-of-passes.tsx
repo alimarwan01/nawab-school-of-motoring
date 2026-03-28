@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { AnimateIn } from "@/components/animate-in";
 
 const students = [
@@ -29,14 +30,22 @@ export function WallOfPasses() {
     <section className="overflow-hidden bg-white px-4 py-16 sm:py-24">
       <div className="mx-auto max-w-6xl lg:px-8">
         <AnimateIn>
-          <div className="text-center">
-            <h2 className="text-2xl font-bold sm:text-3xl">
-              The wall of passes
-            </h2>
-            <p className="mt-2 text-muted-foreground">
-              Real students, real results. Every one of these learners passed
-              their test with Nawab.
-            </p>
+          <div className="flex items-baseline justify-between">
+            <div>
+              <h2 className="text-2xl font-bold sm:text-3xl">
+                The wall of passes
+              </h2>
+              <p className="mt-2 text-muted-foreground">
+                Real students, real results. Every one of these learners passed
+                their test with Nawab.
+              </p>
+            </div>
+            <Link
+              href="/testimonials"
+              className="hidden text-sm text-primary underline underline-offset-4 hover:text-primary/80 sm:block"
+            >
+              Read their reviews &rarr;
+            </Link>
           </div>
         </AnimateIn>
         <div className="mt-12 grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-6 lg:gap-4">
@@ -66,6 +75,14 @@ export function WallOfPasses() {
               </div>
             </AnimateIn>
           ))}
+        </div>
+        <div className="mt-6 text-center sm:hidden">
+          <Link
+            href="/testimonials"
+            className="text-sm text-primary underline underline-offset-4 hover:text-primary/80"
+          >
+            Read their reviews &rarr;
+          </Link>
         </div>
       </div>
     </section>
