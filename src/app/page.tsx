@@ -2,7 +2,6 @@ import { Phone } from "lucide-react";
 import Image from "next/image";
 import { CTABanner } from "@/components/cta-banner";
 import { AnimateIn } from "@/components/animate-in";
-import { FirstTimePassBadge } from "@/components/first-time-pass-badge";
 import { WallOfPasses } from "@/components/wall-of-passes";
 import { GoogleRating } from "@/components/google-rating";
 import { StatsStrip } from "./stats-strip";
@@ -35,7 +34,13 @@ export default function HomePage() {
             </AnimateIn>
             <AnimateIn from="up" delay={450} duration={600}>
               <div className="mt-8 inline-flex items-center gap-4">
-                <FirstTimePassBadge className="h-20 w-20 text-accent sm:h-24 sm:w-24" />
+                <Image
+                  src="/first-time-pass-badge.png"
+                  alt="Nawab Motoring First Time Pass badge"
+                  width={96}
+                  height={96}
+                  className="h-20 w-20 sm:h-24 sm:w-24"
+                />
                 <div>
                   <p className="text-2xl font-bold text-primary-foreground sm:text-3xl">
                     200+
