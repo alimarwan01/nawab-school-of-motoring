@@ -27,8 +27,23 @@ export function GoogleRating() {
             ))}
           </div>
           <p className="mt-1 text-sm text-muted-foreground">
-            <CountUp end={199} /> reviews on Google &middot;{" "}
-            <CountUp end={457} /> on FreeIndex
+            <a
+              href="https://www.google.com/maps/place/Nawab+School+Of+Motoring/@52.6569,-1.0728,17z/data=!4m8!3m7!1s0x4877613682d1a7e9:0x7a2e5be5cc0c8e0!8m2!3d52.6569!4d-1.0728!9m1!1b1!16s%2Fg%2F11c5r7_9zz"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 transition-colors hover:text-foreground"
+            >
+              <CountUp end={199} /> reviews on Google
+            </a>
+            {" "}&middot;{" "}
+            <a
+              href="https://www.freeindex.co.uk/profile(nawab-school-of-motoring)_536371.htm"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 transition-colors hover:text-foreground"
+            >
+              <CountUp end={457} /> on FreeIndex
+            </a>
           </p>
         </div>
       </div>
